@@ -39,6 +39,8 @@ Model 4: Class rebalacing has reduced the overfitting and improved accuracy of t
 
 ## Technologies Used
 Python 3.X
+tensorflow - v2.8.0
+keras - v2.8.0
 
 <!-- As the libraries versions keep on changing, it is recommended to mention the version of library used in this project -->
 
