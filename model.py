@@ -5,9 +5,9 @@ import numpy as np
 import pandas as pd
 import os
 import PIL
-from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
+from tensorflow.keras.models import load_model
 
 
 
