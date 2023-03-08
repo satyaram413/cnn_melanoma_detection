@@ -8,12 +8,13 @@ import PIL
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
 
 
 
 class MelanomaDetectionModel:
     ROOT_PATH="model/"
-    MODEL_NAME="CNN_MELANOMIA2.h5"
+    MODEL_NAME="CNN_MELANOMIA.h5"
     
     def __init__(self) -> None:
         print("oppo "+os.getcwd())
@@ -21,8 +22,7 @@ class MelanomaDetectionModel:
 
     def getClassOfCancer(self, uploadedImage):
         class_names=['actinic keratosis', 'basal cell carcinoma', 'dermatofibroma', 'melanoma', 'nevus', 'pigmented benign keratosis', 'seborrheic keratosis', 'squamous cell carcinoma', 'vascular lesion']
-        input_img = image.load_img(uploadedImage, target_size=(180, 180), color_mode='rgb')
-        tf_image = image.img_to_array(input_img)
+        tf_image = image.img_to_array(uploadedImage)
 
         # Add an extra dimension to the array to make it a tensor with shape (1, *image_shape)
         image_tensor = tf_image[tf.newaxis,...]
