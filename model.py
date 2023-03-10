@@ -12,6 +12,8 @@ from tensorflow.keras.preprocessing import image
 
 
 
+
+
 class MelanomaDetectionModel:
     ROOT_PATH="model/"
     MODEL_NAME="CNN_MELANOMIA.h5"
@@ -28,7 +30,6 @@ class MelanomaDetectionModel:
         image_tensor = tf_image[tf.newaxis,...]
         scaled_image=tf.keras.layers.Rescaling(scale=1./255)(image_tensor)
         prob=self.model.predict(scaled_image)
-        prediction = np.argmax(prob)
+        return prob
 
         # Print the class label
-        print(class_names[prediction])
